@@ -32,6 +32,13 @@ int main() {
     float average_surface_area;
     float average_volume;
 
+    printf("How many spherical segments you want to evaluate [2-10]?\n");
+    scanf("%d", &num_of_segments);
+
+    while(num_of_segments < 2 || num_of_segments > 10) {
+        printf("How many spherical segments you want to evaluate [2-10]?\n");
+        scanf("%d", &num_of_segments);
+    }
 
     return 0;
 }
