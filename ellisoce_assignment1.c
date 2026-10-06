@@ -40,5 +40,10 @@ int main() {
         scanf("%d", &num_of_segments);
     }
 
+    for (current_segment_num = 1; current_segment_num <= num_of_segments; current_segment_num++) {
+        printf("Obtaining data for spherical segment number %d\n", current_segment_num);
+    }
+
+
     return 0;
 }
