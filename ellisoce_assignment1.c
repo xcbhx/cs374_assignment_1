@@ -42,6 +42,8 @@ int main() {
         printf("How many spherical segments you want to evaluate [2-10]?\n");
         scanf("%d", &num_of_segments);
     }
+    sum_of_surface_area = 0;
+    sum_of_volume = 0;
 
     for (current_segment_num = 1; current_segment_num <= num_of_segments; current_segment_num++) {
         do {
@@ -70,8 +72,16 @@ int main() {
         lateral_surface_area = 2 * PI * sphere_radius * segment_height_h;
         total_surface_area = top_surface_area + bottom_surface_area + lateral_surface_area;
         volume = (1.0/6.0) * PI * segment_height_h * ((3 * (top_radius_a * top_radius_a)) + (3 * (bottom_radius_b * bottom_radius_b)) + (segment_height_h * segment_height_h));
-    }
 
+        printf("Total Surface Area = %.2f Volume = %.2f.\n", total_surface_area, volume);
+
+        sum_of_surface_area += total_surface_area;
+        sum_of_volume += volume;
+    }
+    average_surface_area = sum_of_surface_area / num_of_segments;
+    average_volume = sum_of_volume / num_of_segments;
+
+    printf("Total average results:\nAverage Surface Area = %.2f Average Volume = %.2f.\n", average_surface_area, average_volume);
 
     return 0;
 }
