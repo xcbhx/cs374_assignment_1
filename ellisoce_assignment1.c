@@ -42,6 +42,17 @@ int main() {
 
     for (current_segment_num = 1; current_segment_num <= num_of_segments; current_segment_num++) {
         printf("Obtaining data for spherical segment number %d\n", current_segment_num);
+
+        printf("What is the radius of the sphere (R)?\n");
+        scanf("%f", &sphere_radius);
+
+        printf("What is the height of the top area of the spherical segment (ha)?\n");
+        scanf("%f", &top_height);
+
+        printf("What is the height of the bottom area of the spherical segment (hb)?\n");
+        scanf("%f", &bottom_height);
+
+        printf("Entered data: R = %.2f ha = %.2f hb = %.2f.\n", sphere_radius, top_height, bottom_height);
     }
 
 
