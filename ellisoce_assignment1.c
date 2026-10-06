@@ -6,6 +6,9 @@
     Calculate the total surface area and volume of several spherical 
     segments given the sizes of their radius R, and the heights ha and hb. 
 */
+
+const float PI = 3.14159265359;
+
 int main() {
     // User input
     int num_of_segments;
@@ -58,6 +61,15 @@ int main() {
                 printf("Invalid Input.\n");
             }
         } while (sphere_radius <= 0 || top_height <= 0 || bottom_height <= 0 || top_height > sphere_radius || bottom_height > sphere_radius || top_height < bottom_height);
+        
+        top_radius_a = sqrt((sphere_radius * sphere_radius) - (top_height * top_height));
+        bottom_radius_b = sqrt((sphere_radius * sphere_radius) - (bottom_height * bottom_height));
+        segment_height_h = top_height - bottom_height;
+        top_surface_area = PI * top_radius_a * top_radius_a;
+        bottom_surface_area = PI * bottom_radius_b * bottom_radius_b;
+        lateral_surface_area = 2 * PI * sphere_radius * segment_height_h;
+        total_surface_area = top_surface_area + bottom_surface_area + lateral_surface_area;
+        volume = (1.0/6.0) * PI * segment_height_h * ((3 * (top_radius_a * top_radius_a)) + (3 * (bottom_radius_b * bottom_radius_b)) + (segment_height_h * segment_height_h));
     }
 
 
